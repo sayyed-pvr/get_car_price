@@ -1,0 +1,10 @@
+{% extends "maintemplate.html" %}
+
+    {% block title %}
+        home
+    {% endblock  %}
+
+    {% block content %}
+        <h1 style='text-align:center;'>به سایت قیمت روز خودرو خوش آمدید...</h1>
+        <a class='btn btn-success a-text' href="{% url 'car:prices' %}">برای ادامه اینجا کلیک کنید</a>
+    {% endblock  %}

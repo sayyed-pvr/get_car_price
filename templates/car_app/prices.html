@@ -1,0 +1,42 @@
+{% extends "maintemplate.html" %}
+
+    {% block title %}
+        home
+    {% endblock  %}
+
+    {% block content %}
+
+        <div id="test">
+            <div> 
+                <h3 style='text-align:center'>آخرین  بروز رسانی : {{current}}</h3>
+            </div>
+            <table>
+                <th style='text-align:center'><h4>نام خودرو</h4></th>
+                <th style='text-align:center'><h4>قیمت بازار</h4></th>
+                <th style='text-align:center'><h4>قیمت کارخانه</h4></th>
+                {% for line in lines_for_template %}
+                    <tr>
+                        <td><h4>{{line.0}}</h4></td>
+                        <td><h4>{{line.1}}</h4></td>
+                        <td><h4>{{line.2}}</h4></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <script type="text/javascript">
+            function refresh() {
+                $.ajax({
+                    url: '{% url "car:prices" %}',
+                    type : 'GET',
+                    success: function (data) {
+                        document.getElementById("test").innerHTML = data;
+                    }
+                });
+            }
+            
+            $(function () {
+                setInterval('refresh()', 15000);
+            });
+        </script>
+    {% endblock  %}

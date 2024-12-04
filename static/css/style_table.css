@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'iyekan';
+    src: url('../fonts/new-fonts/Yekan.eot') format('eot'), /* IE6–8 */
+    url('../fonts/new-fonts/Yekan.woff2') format('woff2'), /* Chrome36+, Opera24+*/
+    url('../fonts/new-fonts/Yekan.woff') format('woff');
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+
+body {
+    font-family: "iyekan";
+}
+
+table {
+    /* margin-left: 20%; */
+    margin-right: 15%;
+    margin-top: 20px;
+    width: 70%;
+    border-spacing: 5px;
+    /* margin: 0 auto; */
+}
+
+table,
+td {
+    border: 2px solid #607d8b;
+    text-align: center;
+}
+
+td {
+    /* height: 35px; */
+    padding: 5px;
+    text-align: center;
+    /* vertical-align: bottom; */
+}
+
+th {
+    background-color: #7ccd5f;
+    color: rgb(252, 252, 252);
+    border: 2px solid #ccc;
+    padding: 5px;
+}
+
+
+/* even >> زوج */
+
+
+/* odd >> فرد */
+
+tr:nth-child(even) {
+    background-color: #dccbcb;
+}
+
+
+tr:nth-child(even):hover {
+    background-color: #5f5959;
+    color: white;
+    transition: .2s;
+}
+
+tr:nth-child(odd):hover {
+    background-color: #453f3f;
+    color: white;
+    transition: .2s;
+}
